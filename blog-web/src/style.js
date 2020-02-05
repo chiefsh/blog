@@ -74,4 +74,5 @@ export const BodyRight = styled.div`
   width: 72%;
   height: 100%;
   background: #fff;
+  // padding: 40px;
 `;

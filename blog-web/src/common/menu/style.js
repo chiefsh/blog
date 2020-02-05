@@ -129,13 +129,20 @@ export const OuterLink = styled.div`
   height: 26px;
 `;
 
-export const OuterLinkItem = styled.div`
+export const OuterLinkItem = styled.a`
   float: left;
+  display: block;
+  text-decoration:none;
+  color:#555;
   width: 50%;
   height: 26px;
   line-height: 26px;
   font-size: 14px;
   text-align: center;
+  &:hover {
+    background: #bdc3c7;
+    border-radius: 4px;
+  }
   .iconfont {
     width: 30px;
     height: 30px;

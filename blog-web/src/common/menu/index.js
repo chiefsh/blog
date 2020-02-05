@@ -24,7 +24,7 @@ class Menu extends Component {
         return (
             <div>
                 <MenuWapper>
-                    <Logo>Chiefsh`s Notes</Logo>
+                    <Logo>{userName}`s Notes</Logo>
                     <MenuList>
                         <MenuItem onClick={() => handleMenuSelected('home')} className={homeSelected ? 'active' : null}>
                         <span className="iconfont">&#xe64e;</span>首页
@@ -64,10 +64,10 @@ class Menu extends Component {
                         </NavWrapper>
                         <Rss></Rss>
                         <OuterLink>
-                            <OuterLinkItem>
+                            <OuterLinkItem href='https://github.com/chiefsh' target="view_window">
                             <span className="iconfont">&#xe677;</span>GitHub
                             </OuterLinkItem>
-                            <OuterLinkItem>
+                            <OuterLinkItem href='https://blog.csdn.net/chief_victo' target="view_window">
                             <span className="iconfont">&#xe60a;</span>CSDN
                             </OuterLinkItem>
                         </OuterLink>
