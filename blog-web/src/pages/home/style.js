@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const HomeWapper = styled.div`
     width: 100%;
-    height: 100%;
-    padding: 40px;
+    height: 400px;
+    padding: 40px 40px;
+    box-sizing: border-box;
 `;
 
 export const ArticleList = styled.div`
@@ -16,7 +17,6 @@ export const ArticleItem = styled.div`
     height: 460px;
     padding: 30px 0;
     box-sizing: border-box;
-    background: #636e72;
 `;
 
 export const Title = styled.div`
@@ -30,6 +30,7 @@ export const Title = styled.div`
 
 export const Content = styled.div`
     height: 300px;
+    overflow: hidden;
 `;
 
 export const LoadMore = styled.div`

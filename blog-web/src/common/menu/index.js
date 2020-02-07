@@ -45,7 +45,7 @@ class Menu extends Component {
                 </MenuWapper>
                 <AccountInfo>
                     <UserInfo>
-                        <img src={headImgUrl}/>
+                        <img src={headImgUrl} alt=''/>
                         <div className="userName">{userName}</div>
                         <div className="userSignature">{userSignature}</div>
                         <NavWrapper>

@@ -3,8 +3,9 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import { GlobalStyle, Header, BodyWrapper, BodyLeft, BodyRight } from "./style";
 import { GlobalFontStyle } from "./static/iconfont/iconfont";
-import Menu from "./common/menu";
 import store from "./store";
+import Home from './pages/home';
+import Menu from "./common/menu";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Menu />
           </BodyLeft>
           <BodyRight>
-            <Route></Route>
+            <Route path='/' exact component={Home}></Route>
           </BodyRight>
         </BodyWrapper>
       </BrowserRouter>
