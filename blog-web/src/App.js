@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
-import { GlobalStyle, Header, BodyWrapper, BodyLeft, BodyRight } from "./style";
+import { GlobalStyle, Header, BodyWrapper, BodyLeft, BodyRight, Footer } from "./style";
 import { GlobalFontStyle } from "./static/iconfont/iconfont";
 import store from "./store";
 import Home from './pages/home';
@@ -22,6 +22,7 @@ function App() {
             <Route path='/' exact component={Home}></Route>
           </BodyRight>
         </BodyWrapper>
+        <Footer></Footer>
       </BrowserRouter>
     </Provider>
   );

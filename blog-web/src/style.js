@@ -58,21 +58,21 @@ export const BodyWrapper = styled.div`
   overflow: hidden;
   margin: 0 auto;
   width: 70%;
-  height: 900px;
-  // background: #7f8c8d;
 `;
 
 export const BodyLeft = styled.div`
   float: left;
   width: 28%;
   height: 100%;
-  // background: #8e44ad;
 `;
 
 export const BodyRight = styled.div`
   float: right;
   width: 72%;
-  height: 100%;
   background: #fff;
-  // padding: 40px;
+`;
+
+export const Footer = styled.div`
+  height: 100px;
+  text-align: center;
 `;

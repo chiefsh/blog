@@ -6,26 +6,27 @@ import {
   ArticleItem,
   Title,
   Content,
-  LoadMore
+  LoadMore,
+  Button
 } from "./style";
 import TitleInfo from "../../common/titleInfo";
 import {actionCreators} from './store';
 
 class Home extends Component {
   render() {
-    console.log('************render***********');
-    console.log(this.props);
     const { total, currentPage, articleList} = this.props;
     return (
       <HomeWapper>
         <ArticleList>
           {
               articleList.map((item) => (
-                <ArticleItem>
+                <ArticleItem key={item.get('id')}>
                     <Title>{item.get('title')}</Title>
-                    <TitleInfo created={item.get('created')} grounp={item.get('grounp')} reply_count={item.get('reply_count')} view_count={item.get('view_count')}></TitleInfo>
+                    <TitleInfo created={item.get('created')} group_id={item.get('grounp').get('id')} name={item.get('grounp').get('name')} reply_count={item.get('reply_count')} view_count={item.get('view_count')}></TitleInfo>
                     <Content dangerouslySetInnerHTML={{__html: item.get('summary')}} ></Content>
-                    <LoadMore>阅读全文</LoadMore>
+                    <LoadMore>
+                      <Button>阅读全文</Button>
+                    </LoadMore>
               </ArticleItem>
               ))
           }
@@ -35,7 +36,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-      console.log('componentDidMount');
       this.props.getActicleList(this.props.currentPage);
   }
 

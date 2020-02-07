@@ -11,7 +11,7 @@ export default (state=defaultState, action) => {
     switch(action.type) {
         case constants.CHANGE_ARTICLE_LIST:
             return state.merge({
-                articleList: action.articleList,
+                articleList: fromJS(action.articleList),
                 total: action.total,
                 currentPage: action.currentPage
             });

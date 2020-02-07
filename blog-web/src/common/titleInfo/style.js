@@ -5,6 +5,7 @@ export const TitleInfoWrapper = styled.div`
   width: 100%;
   border: none,
   color: #999;
+  margin-top: 15px;
   margin-bottom: 30px;
   box-sizing: border-box;
   text-align: center;
@@ -32,5 +33,18 @@ export const InfoItem = styled.div`
       width: 16px;
       heith: 16px;
       margin-right: 5px;
+  }
+  i {
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    margin-left: 2px;
+    &:hover {
+      &:hover {
+        transition-property: color border-color;
+        transition-duration: .2s;
+        color: #222;
+        border-color: #222;
+    }
+    }
   }
 `;
