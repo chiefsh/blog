@@ -10,6 +10,7 @@ import {
   Button
 } from "./style";
 import TitleInfo from "../../common/titleInfo";
+import  PageTurn from "../../common/pageTurn";
 import {actionCreators} from './store';
 
 class Home extends Component {
@@ -25,12 +26,13 @@ class Home extends Component {
                     <TitleInfo created={item.get('created')} group_id={item.get('grounp').get('id')} name={item.get('grounp').get('name')} reply_count={item.get('reply_count')} view_count={item.get('view_count')}></TitleInfo>
                     <Content dangerouslySetInnerHTML={{__html: item.get('summary')}} ></Content>
                     <LoadMore>
-                      <Button>阅读全文</Button>
+                      <Button>阅读全文 ></Button>
                     </LoadMore>
               </ArticleItem>
               ))
           }
         </ArticleList>
+        <PageTurn></PageTurn>
       </HomeWapper>
     );
   }

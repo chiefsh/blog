@@ -4,6 +4,7 @@ import { fromJS } from 'immutable';
 const defaultState = fromJS({
     articleList: [],
     total: 0,
+    size: 5,
     currentPage: 1
 });
   
