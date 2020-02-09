@@ -25,6 +25,7 @@ export const Title = styled.div`
     font-size: 26px;
     text-align: center;
     color: #555;
+    cursor: pointer;
 `;
 
 export const Content = styled.div`

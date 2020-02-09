@@ -31,6 +31,7 @@ export const MenuItem = styled.div`
   font-size: 13px;
   box-sizing: border-box;
   cursor: pointer;
+  color: #555;
   &.active {
     background: #F9F9F9;
   }

@@ -24,11 +24,18 @@ export const Content = styled.div`
 `;
 
 export const Notes = styled.div`
-    margin: 2px 0 0;
+    margin: 40px 0 40px 0;
     padding: 10px 20px;
     border-left: 3px solid #ff1700;
     background-color: #f9f9f9;
     font-size: 14px;
+    line-height: 2;
+`;
+
+export const NotesItem = styled.div`
+    b {
+        font-weight: bold;
+    }
 `;
 
 export const Footer = styled.div`
@@ -42,6 +49,7 @@ export const Footer = styled.div`
 export const NextUp = styled.div`
     float: left;
     height: 100%;
+    cursor: pointer;
     &:hover {
         color: #222;
     }
@@ -50,6 +58,7 @@ export const NextUp = styled.div`
 export const NextDown = styled.div`
     float: right;
     height: 100%;
+    cursor: pointer;
     &:hover {
         color: #222;
     }

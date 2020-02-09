@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import {
     DetailWapper,
     Title,
     Content,
     Notes,
+    NotesItem,
     Footer,
     NextUp,
     NextDown
 } from './style';
 import TitleInfo from "../../common/titleInfo";
+import {actionCreators} from './store';
 
 class Detail extends Component {
     render() {
-        const {article, previous, next} = this.props;
+        const {article, previous, next, getDetail} = this.props;
         return (
         <DetailWapper>
             <Title>{article.get('title')}</Title>
@@ -24,18 +27,22 @@ class Detail extends Component {
               reply_count={article.get('reply_count')} 
               view_count={article.get('view_count')}
             ></TitleInfo>
-            <Content>{article.get('content')}</Content>
+            <Content dangerouslySetInnerHTML={{__html: article.get('content')}}></Content>
             <Notes>
-                <div>
+                <NotesItem>
                     <b>本文作者：</b>{article.get('author')}
-                </div>
-                <div>
+                </NotesItem>
+                <NotesItem>
                     <b>版权声明：</b>转载请注明出处！
-                </div>
+                </NotesItem>
             </Notes>
             <Footer>
-            <NextUp>< {previous.get('title')}</NextUp>
-            <NextDown>{next.get('title')} ></NextDown>
+            <NextUp
+              onClick={() => getDetail(previous.get('id'))}
+            >{"< " + previous.get('title')}</NextUp>
+            <NextDown
+              onClick={() => getDetail(next.get('id'))}
+            >{next.get('title') + " >"}</NextDown>
             </Footer>
         </DetailWapper>
         );
@@ -46,14 +53,16 @@ class Detail extends Component {
     }
 }
 
-mapState = (state) => ({
+const mapState = (state) => ({
     article: state.getIn(['detail', 'article']),
     previous: state.getIn(['detail', 'previous']),
-    next: state.getIn(['detail', 'next']),
+    next: state.getIn(['detail', 'next'])
 });
 
-mapDispatch = (dispatch) => ({
-    
+const mapDispatch = (dispatch) => ({
+    getDetail(id) {
+        dispatch(actionCreators.getDetail(id));
+    }
 });
 
-export default connect()(Detail);
+export default connect(mapState, mapDispatch)(withRouter(Detail));

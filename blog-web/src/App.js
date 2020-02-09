@@ -5,6 +5,7 @@ import { GlobalStyle, Header, BodyWrapper, BodyLeft, BodyRight, Footer } from ".
 import { GlobalFontStyle } from "./static/iconfont/iconfont";
 import store from "./store";
 import Home from './pages/home';
+import Detail from './pages/detail';
 import Menu from "./common/menu";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           </BodyLeft>
           <BodyRight>
             <Route path='/' exact component={Home}></Route>
+            <Route path='/detail/:id' exact component={Detail}></Route>
           </BodyRight>
         </BodyWrapper>
         <Footer></Footer>

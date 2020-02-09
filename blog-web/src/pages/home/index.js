@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 import {
   HomeWapper,
   ArticleList,
@@ -22,11 +23,15 @@ class Home extends Component {
           {
               articleList.map((item) => (
                 <ArticleItem key={item.get('id')}>
+                    <Link to={'/detail/'+item.get('id')} style={{ textDecoration: 'none' }}>
                     <Title>{item.get('title')}</Title>
+                    </Link>
                     <TitleInfo created={item.get('created')} group_id={item.get('grounp').get('id')} name={item.get('grounp').get('name')} reply_count={item.get('reply_count')} view_count={item.get('view_count')}></TitleInfo>
                     <Content dangerouslySetInnerHTML={{__html: item.get('summary')}} ></Content>
                     <LoadMore>
+                      <Link to={'/detail/'+item.get('id')} style={{ textDecoration: 'none' }}>
                       <Button>阅读全文 ></Button>
+                      </Link>
                     </LoadMore>
               </ArticleItem>
               ))
