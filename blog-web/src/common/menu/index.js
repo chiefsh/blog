@@ -54,7 +54,7 @@ class Menu extends Component {
                 {groupSelected ? <ActiveTag /> : null}
               </MenuItem>
             </Link>
-            <Link to="/tag" style={{ textDecoration: 'none' }}>
+            <Link to="/tags" style={{ textDecoration: 'none' }}>
               <MenuItem
                 onClick={() => handleMenuSelected("tag")}
                 className={tagSelected ? "active" : null}

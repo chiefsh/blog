@@ -6,6 +6,7 @@ import { GlobalFontStyle } from "./static/iconfont/iconfont";
 import store from "./store";
 import Home from './pages/home';
 import Detail from './pages/detail';
+import Group from './pages/group';
 import Menu from "./common/menu";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <BodyRight>
             <Route path='/' exact component={Home}></Route>
             <Route path='/detail/:id' exact component={Detail}></Route>
+            <Route path='/group' exact component={Group}></Route>
           </BodyRight>
         </BodyWrapper>
         <Footer></Footer>
