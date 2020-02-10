@@ -1,0 +1,1 @@
+export const CHANGE_GROUPS = 'group/CHANGE_GROUPS';

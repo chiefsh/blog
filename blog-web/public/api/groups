@@ -1,0 +1,42 @@
+{
+    "code": 0,
+    "msg": "success",
+    "total": 25, 
+    "group_list": [
+        {
+            "id": 1,
+            "count": 3,
+            "name": "前端"
+        },
+        {
+            "id": 2,
+            "count": 1,
+            "name": "elasticsearch"
+        },
+        {
+            "id": 3,
+            "count": 3,
+            "name": "推荐系统"
+        },
+        {
+            "id": 4,
+            "count": 1,
+            "name": "自动化"
+        },
+        {
+            "id": 5,
+            "count": 1,
+            "name": "python"
+        },
+        {
+            "id": 6,
+            "count": 2,
+            "name": "nginx"
+        },
+        {
+            "id": 7,
+            "count": 1,
+            "name": "数据库"
+        }
+    ]
+}
