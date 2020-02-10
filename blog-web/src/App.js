@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Detail from './pages/detail';
 import Group from './pages/group';
 import Tags from './pages/tags';
+import GroupDetail from './pages/groupDetail';
 import Menu from "./common/menu";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/detail/:id' exact component={Detail}></Route>
             <Route path='/group' exact component={Group}></Route>
             <Route path='/tags' exact component={Tags}></Route>
+            <Route path='/groupDetail/:id' exact component={GroupDetail}></Route>
           </BodyRight>
         </BodyWrapper>
         <Footer></Footer>

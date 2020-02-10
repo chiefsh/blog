@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { Link } from "react-router-dom";
 import {
     GroupWrapper,
     TitleWrapper,
@@ -22,9 +23,10 @@ class Group extends Component {
                   <UlList>
                       {
                           group_list.map((item) => (
-                            <GroupItem
-                              key={item.get('id')}
-                            ><i>{item.get('name')}</i>({item.get('count')})</GroupItem>
+                              <Link to={'/groupDetail/' + item.get('id')} key={item.get('id')}>
+                                <GroupItem
+                                ><i>{item.get('name')}</i>({item.get('count')})</GroupItem>
+                              </Link>
                           ))
                       }
                   </UlList>

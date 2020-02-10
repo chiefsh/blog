@@ -1,0 +1,1 @@
+export const CHANGE_GROUP_DETAIL = 'groupDetail/CHANGE_GROUP_DETAIL';
