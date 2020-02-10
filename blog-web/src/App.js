@@ -7,6 +7,7 @@ import store from "./store";
 import Home from './pages/home';
 import Detail from './pages/detail';
 import Group from './pages/group';
+import Tags from './pages/tags';
 import Menu from "./common/menu";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/' exact component={Home}></Route>
             <Route path='/detail/:id' exact component={Detail}></Route>
             <Route path='/group' exact component={Group}></Route>
+            <Route path='/tags' exact component={Tags}></Route>
           </BodyRight>
         </BodyWrapper>
         <Footer></Footer>

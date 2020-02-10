@@ -1,0 +1,1 @@
+export const CHANGE_TAGS = 'tags/CHANGE_TAGS';
