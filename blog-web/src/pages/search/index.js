@@ -39,7 +39,7 @@ class Search extends Component {
                     currentPage={currentPage}
                     selectPage={getSearch}
                     page_size={10}
-                    id={this.input.value}
+                    id={this.input ? this.input.value : ''}
                   ></List>
                 </SearchWrapper>
             );
