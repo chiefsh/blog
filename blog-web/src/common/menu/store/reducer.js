@@ -23,6 +23,15 @@ export default (state=defaultState, action) => {
                 tagSelected: action.tagSelected,
                 searchSelected: action.searchSelected
             });
+        case constants.ACCOUNT_INFO:
+            return state.merge({
+                headImgUrl: action.headImgUrl,
+                userName: action.userName,
+                userSignature: action.userSignature,
+                articleCount: action.articleCount,
+                groupCount: action.groupCount,
+                tagCount: action.tagCount
+            })
         default:
             return state;
     }

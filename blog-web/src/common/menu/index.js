@@ -120,6 +120,11 @@ class Menu extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    this.props.getAccountInfo();
+  }
+
 }
 
 const mapState = state => ({
@@ -138,6 +143,9 @@ const mapState = state => ({
 const mapDispatch = dispatch => ({
   handleMenuSelected(item) {
     dispatch(actionCreators.menu_select(item));
+  },
+  getAccountInfo() {
+    dispatch(actionCreators.getAccountInfo());
   }
 });
 
