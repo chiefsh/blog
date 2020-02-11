@@ -1,0 +1,1 @@
+export const CHANGE_TAGS_DETAIL = 'tagsDetail/CHANGE_TAGS_DETAIL';

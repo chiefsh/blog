@@ -5,6 +5,7 @@ const defaultState = fromJS({
     homeSelected: true,
     groupSelected: false,
     tagSelected: false,
+    searchSelected: false,
     headImgUrl: 'https://ww4.sinaimg.cn/thumb180/63ae8f44ly1gbkdadedkkj22801o07wi.jpg',
     userName: 'Chiefsh',
     userSignature: '心安理得，混吃等死',
@@ -19,7 +20,8 @@ export default (state=defaultState, action) => {
             return state.merge({
                 homeSelected: action.homeSelected,
                 groupSelected: action.groupSelected,
-                tagSelected: action.tagSelected
+                tagSelected: action.tagSelected,
+                searchSelected: action.searchSelected
             });
         default:
             return state;

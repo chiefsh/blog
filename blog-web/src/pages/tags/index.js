@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { Link } from "react-router-dom";
 import {
     TagsWrapper,
     TitleWrapper,
@@ -21,10 +22,11 @@ class Tags extends Component {
                 <TagsList>
                     {
                         tag_list.map((item) => (
-                            <TagItem
-                              key={item.get('id')}
-                              className={item.get('count')>=2 ? 'active' : ''}
-                            >{item.get('name')}</TagItem>
+                            <Link key={item.get('id')} to={'/tagsDetail/' + item.get('id')}>
+                                <TagItem
+                                    className={item.get('count')>=2 ? 'active' : ''}
+                                >{item.get('name')}</TagItem>
+                            </Link>
                         ))
                     }
                 </TagsList>

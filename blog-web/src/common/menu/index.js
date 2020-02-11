@@ -23,6 +23,7 @@ class Menu extends Component {
       homeSelected,
       groupSelected,
       tagSelected,
+      searchSelected,
       headImgUrl,
       userName,
       userSignature,
@@ -63,9 +64,15 @@ class Menu extends Component {
                 {tagSelected ? <ActiveTag /> : null}
               </MenuItem>
             </Link>
-            <MenuItem>
-              <span className="iconfont">&#xe609;</span>搜索
-            </MenuItem>
+            <Link to="/search" style={{ textDecoration: 'none' }}>
+              <MenuItem
+                onClick={() => handleMenuSelected("search")}
+                className={searchSelected ? "active" : null}
+              >
+                <span className="iconfont">&#xe609;</span>搜索
+                {searchSelected ? <ActiveTag /> : null}
+              </MenuItem>
+            </Link>
           </MenuList>
         </MenuWapper>
         <AccountInfo>
@@ -74,18 +81,24 @@ class Menu extends Component {
             <div className="userName">{userName}</div>
             <div className="userSignature">{userSignature}</div>
             <NavWrapper>
+              <Link  to="/search" style={{ textDecoration: 'none' }}>
               <NavItem>
                 <span>{articleCount}</span>
                 <span>日志</span>
               </NavItem>
+              </Link>
+              <Link  to="/group" style={{ textDecoration: 'none' }}>
               <NavItem>
                 <span>{groupCount}</span>
                 <span>分类</span>
               </NavItem>
+              </Link>
+              <Link  to="/tags" style={{ textDecoration: 'none' }}>
               <NavItem>
                 <span>{tagCount}</span>
                 <span>标签</span>
               </NavItem>
+              </Link>
             </NavWrapper>
             <Rss></Rss>
             <OuterLink>
@@ -111,6 +124,7 @@ class Menu extends Component {
 
 const mapState = state => ({
   homeSelected: state.getIn(["menu", "homeSelected"]),
+  searchSelected: state.getIn(["menu", "searchSelected"]),
   groupSelected: state.getIn(["menu", "groupSelected"]),
   tagSelected: state.getIn(["menu", "tagSelected"]),
   headImgUrl: state.getIn(["menu", "headImgUrl"]),

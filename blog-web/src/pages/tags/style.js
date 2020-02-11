@@ -39,6 +39,7 @@ export const TagItem = styled.div`
     font-size: 16px;
     border-bottom: 1px solid #999;
     cursor: pointer;
+    color: #555;
     &.active {
         font-size: 28.5px;
         color: #222;
