@@ -1,37 +1,21 @@
 import * as constants from './constants';
 import axios from 'axios';
 
-const changeGroupList = (total, groupList, currentPage) => ({
-    type: constants.CHANGE_GROUP_LIST,
+const changeTagList = (total, tagList, currentPage) => ({
+    type: constants.CHANGE_TAG_LIST,
     total,
-    groupList,
+    tagList,
     currentPage
-});
-
-const changeDisplay = (display) => ({
-    type: constants.CHANGE_DISPLAY,
-    display
-});
-
-const changeDelVisibleInner = (deleteVisible) => ({
-    type: constants.CHANGE_DEL_VISIBLE,
-    deleteVisible
-});
-
-
-export const changeDisplayNew = (display) => ({
-    type: constants.CHANGE_DISPLAY,
-    display
 });
 
 
 export const getGroupList = (page) => {
     return (dispatch) => {
-        axios.get('/api/group?size=10&page=' + page).then((res) => {
+        axios.get('/api/tags?size=10&page=' + page).then((res) => {
             const result = res.data;
-            dispatch(changeGroupList(result.total, result.data, page));
+            dispatch(changeTagList(result.total, result.data, page));
         }).catch(() => {
-            console.log('getGroupList error');
+            console.log('changeTagList error');
         })
     }
 }

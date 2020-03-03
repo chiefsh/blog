@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GroupWrapper = styled.div`
+export const TagWrapper = styled.div`
 `;
 
 export const AddBtnWrapper = styled.div`
