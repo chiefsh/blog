@@ -9,6 +9,7 @@ import Menu from './pages/menu';
 import Group from './pages/group';
 import Tags from './pages/tags';
 import Home from './pages/home';
+import Article from './pages/article';
 
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -32,6 +33,7 @@ function App() {
               <Route path='/' exact component={Home}></Route>
               <Route path='/group' exact component={Group}></Route>
               <Route path='/tags' exact component={Tags}></Route>
+              <Route path='/article' exact component={Article}></Route>
             </Content>
             <Footer
               style={{
