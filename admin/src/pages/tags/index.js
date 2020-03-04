@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
-import { Table, Divider } from 'antd';
+import { Table } from 'antd';
 import {connect} from 'react-redux';
 import {
   TagWrapper
 } from './style';
 import {actionCreators} from './store';
-import Add from './components/add';
-import Delete from './components/delete';
 
 
 class Tags extends Component {
     render() {
         const {total, tagList, currentPage, changePage} = this.props;
-        const data = groupList.toJS();
+        const data = tagList.toJS();
         const columns = [
             {
               title: '标签',
@@ -37,7 +35,6 @@ class Tags extends Component {
               key: 'modified',
             }
           ];
-        console.log(deleteVisible);
         return (
             <TagWrapper>
               <Table 
@@ -59,9 +56,18 @@ class Tags extends Component {
 }
 
 const mapState = (state) => ({
+    total: state.getIn(['tags', 'total']),
+    tagList: state.getIn(['tags', 'tagList']),
+    currentPage: state.getIn(['tags', 'currentPage'])
 });
 
 const mapDispatch = (dispatch) => ({
+    changePage(page) {
+      dispatch(actionCreators.getTagList(page.current));
+    },
+    getTagList(page) {
+      dispatch(actionCreators.getTagList(page));
+    }
 });
 
 export default connect(mapState, mapDispatch)(Tags);

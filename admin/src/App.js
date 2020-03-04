@@ -7,6 +7,7 @@ import { Layout } from "antd";
 import "antd/dist/antd.css";
 import Menu from './pages/menu';
 import Group from './pages/group';
+import Tags from './pages/tags';
 import Home from './pages/home';
 
 
@@ -30,6 +31,7 @@ function App() {
             <Content style={{ background: "#fff", margin: "10px" }}>
               <Route path='/' exact component={Home}></Route>
               <Route path='/group' exact component={Group}></Route>
+              <Route path='/tags' exact component={Tags}></Route>
             </Content>
             <Footer
               style={{
